@@ -76,8 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 y: 0,
                 scrollTrigger: {
                     trigger: skill,
-                    start: 'top 10%',
-                    end: ' bottom 30%',
+                    start: 'top top',
+                    end: '-=1000',
+                    marker: true,
                     onEnter: () => gsap.to(skill, { opacity: 1, y: 0, duration: 1 }),
                     onLeaveBack: () => gsap.to(skill, { opacity: 0, y: 50, duration: 1 })
                 }
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
 
 

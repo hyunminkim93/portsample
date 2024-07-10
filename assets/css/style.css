@@ -122,7 +122,7 @@ body {
     font-family: "Dynalight";
     font-size: 10vw;
     color: #741BD4;
-    position: fixed;
+    position: inherit;
     top: 42%;
     left: 98%;
     transform: translate(-50%, -50%);
@@ -173,8 +173,8 @@ body {
     width: 15.5vw;
     height: 16.5vw;
     border-radius: 50%;
-    margin-left: 35vw;
-    margin-top: -4vw;
+    margin-left: 38vw;
+    margin-top: -5vw;
 
 }
 
@@ -237,7 +237,7 @@ body {
 #section3 {
     display: flex;
     flex-direction: column;
-    height: 110vh;
+    height: 130vh;
     align-items: center;
     background-image: url(/assets/img/bg2.jpg);
     background-color: #000;
@@ -255,6 +255,7 @@ body {
     padding-left: 80px;
     padding-right: 80px;
     margin-top: 60px;
+    gap: 12px;
 }
 
 .skill-left {
@@ -276,6 +277,8 @@ body {
     font-size: 0.8vw;
     color: #FBF0C2;
     font-family: "IropkeBatangM";
+    text-align: unset;
+    width: 390px;
 }
 
 .percent {
@@ -307,12 +310,241 @@ body {
 }
 
 #section4 {
-    height: 205vh;
-    background-color: #000;
+    height: 100vh;
+    background-color: #0a0a0b;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* 추가 */
+}
+
+.cube-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+    position: relative;
+}
+
+.cube1,
+.cube2 {
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(0);
+    transition: transform 1s;
+    position: relative;
+}
+
+.face {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #751AD4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6vw;
+    font-family: "Thunder";
+    color: #FBF0C2;
+    border: 1px solid #000;
+}
+
+.back span {
+    transform: rotate(180deg);
+    /* 텍스트를 다시 회전시킴 */
+}
+
+span {
+    position: relative;
+}
+
+.front_img {
+    position: absolute;
+    top: 86px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-image: url(/assets/img/chicken.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.front_img1 {
+    position: absolute;
+    top: 208px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-image: url(/assets/img/movie.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.front_img1 {
+    transform: rotate(180deg);
+}
+
+.front_img2 {
+    position: absolute;
+    top: 86px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-image: url(/assets/img/pickstom.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.front_img3 {
+    position: absolute;
+    top: 86px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-image: url(/assets/img/music.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.face1 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-image: url(/assets/img/bg3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    flex-direction: column;
+}
+
+h4 {
+    font-size: 0.6vw;
+    color: #FBF0C2;
+    font-family: "IropkeBatangM";
+    width: 340px;
+}
+
+h2 {
+    color: #751AD4;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 6vw;
+    font-family: "Thunder";
 
 }
 
+.vue {
+    color: #751AD4;
+    text-align: center;
+    font-size: 6vw;
+    font-family: "Thunder";
+    top: 80px;
+}
 
+.vuedesc {
+    font-size: 0.6vw;
+    color: #FBF0C2;
+    font-family: "IropkeBatangM";
+    width: 244px;
+    bottom: 68px;
+}
+
+.back.vue,
+.back.vuedesc {
+    transform: rotate(180deg);
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    gap: 2%;
+    margin-bottom: 14px;
+    margin-left: 14px;
+
+}
+
+.button-container1 {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    gap: 2%;
+    margin-bottom: 350px;
+    margin-left: -18px;
+
+}
+
+.button-container1 {
+    transform: rotate(180deg);
+}
+
+.button {
+    background-color: #751AD4;
+    padding: 6px 10px;
+    bottom: 0;
+}
+
+.button1 {
+    background-color: #751AD4;
+    padding: 6px 10px;
+    bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+    font-family: "Roboto";
+}
+
+
+.cube1 .front,
+.cube2 .front {
+    transform: rotateY(0deg) translateZ(200px);
+
+}
+
+.cube1 .back,
+.cube2 .back {
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.cube1 .left,
+.cube2 .left {
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.cube1 .right,
+.cube2 .right {
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.cube1 .top,
+.cube2 .top {
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.cube1 .bottom,
+.cube2 .bottom {
+    transform: rotateX(-90deg) translateZ(200px);
+}
+
+#section5 {
+    height: 100vh;
+    background-color: #000;
+}
 
 @media (max-width: 1200px) {
     .content {
@@ -394,5 +626,52 @@ body {
         font-size: 1.2vw;
         color: #FBF0C2;
         font-family: "IropkeBatangM";
+    }
+
+    .cube-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 93.75rem;
+        position: relative;
+    }
+
+    .cube1,
+    .cube2 {
+        width: 25rem;
+        height: 25rem;
+        transform-style: preserve-3d;
+        transform: rotateX(0) rotateY(0);
+        transition: transform 1s;
+        position: relative;
+    }
+
+    .face {
+        position: absolute;
+        width: 25rem;
+        height: 25rem;
+        background: #751AD4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 6vw;
+        font-family: "Thunder";
+        color: #FBF0C2;
+        border: 1px solid #000;
+    }
+
+    .face1 {
+        position: absolute;
+        width: 25rem;
+        height: 25rem;
+        background-image: url(/assets/img/bg3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        flex-direction: column;
     }
 }
