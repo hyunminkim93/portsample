@@ -568,6 +568,7 @@ a {
     }
 
     .scroll {
+        font-size: 2vw;
         display: block;
         margin: 20px auto;
         right: 0;
@@ -600,8 +601,25 @@ a {
         text-align: center;
     }
 
+    .p1 {
+        font-size: 1.5vw;
+    }
+
+    .p2 {
+        font-size: 1.5vw;
+    }
+
+    .title2 {
+        font-size: 8vw;
+        color: #741BD4;
+        text-align: center;
+        line-height: 0.9;
+        font-family: "Thunder";
+        padding-bottom: 5rem;
+    }
+
     .title3 {
-        font-size: 12vw;
+        font-size: 8vw;
         font-family: "Thunder";
         color: #FBF0C2;
         margin: 0;
@@ -611,52 +629,5 @@ a {
         font-size: 1.2vw;
         color: #FBF0C2;
         font-family: "IropkeBatangM";
-    }
-
-    .cube-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        perspective: 93.75rem;
-        position: relative;
-    }
-
-    .cube1,
-    .cube2 {
-        width: 25rem;
-        height: 25rem;
-        transform-style: preserve-3d;
-        transform: rotateX(0) rotateY(0);
-        transition: transform 1s;
-        position: relative;
-    }
-
-    .face {
-        position: absolute;
-        width: 25rem;
-        height: 25rem;
-        background: #751AD4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 6vw;
-        font-family: "Thunder";
-        color: #FBF0C2;
-        border: 1px solid #000;
-    }
-
-    .face1 {
-        position: absolute;
-        width: 25rem;
-        height: 25rem;
-        background-image: url(/assets/img/bg3.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #000;
-        flex-direction: column;
     }
 }
