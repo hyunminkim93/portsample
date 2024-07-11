@@ -45,6 +45,7 @@
             </div>
         </section>
         <!-- //section2 -->
+
         <section id="section3">
             <div class="skill skill-left" data-percent="73%">
                 <h2 class="title3">JAVASCRIPT</h2>
@@ -165,8 +166,9 @@
         <!-- //section4 -->
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollSmoother.min.js"></script>
     <script src="./assets/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -180,7 +182,7 @@
                 });
             }
 
-            // Split text into individual characters
+            // 한글자씩 나오기
             const developer = document.querySelector('.developer');
             const portfolio = document.querySelector('.portfolio');
             const pro = document.querySelector('.pro');
@@ -219,6 +221,7 @@
             }
         });
 
+
         gsap.registerPlugin(ScrollTrigger);
 
         // section3의 ScrollTrigger 설정
@@ -251,6 +254,13 @@
                 // 큐브 2는 반대로 회전
                 document.querySelector('.cube2').style.transform = `rotateX(${-angle}deg)`;
             },
+        });
+
+        // ScrollSmoother 설정
+        ScrollSmoother.create({
+            wrapper: document.body,
+            content: document.body,
+            smooth: 2, // 스무스 스크롤의 강도 조정
         });
     </script>
 </body>

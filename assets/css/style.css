@@ -175,27 +175,9 @@ body {
     border-radius: 50%;
     margin-left: 38vw;
     margin-top: -5vw;
+    object-fit: cover;
 
 }
-
-/* #loader {
-    border-radius: 50%;
-    background-color: #FBF0C2;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#percentage {
-    color: #741BD4;
-    font-size: 60px;
-    position: absolute;
-    font-weight: bold;
-} */
 
 #section2 {
     height: 100vh;
@@ -387,6 +369,7 @@ span {
 
 .front_img1 {
     transform: rotate(180deg);
+    /* 텍스트를 다시 회전시킴 */
 }
 
 .front_img2 {
@@ -449,7 +432,7 @@ h2 {
     text-align: center;
     font-size: 6vw;
     font-family: "Thunder";
-    top: 80px;
+    top: 110px;
 }
 
 .vuedesc {
@@ -463,6 +446,7 @@ h2 {
 .back.vue,
 .back.vuedesc {
     transform: rotate(180deg);
+    /* 텍스트를 다시 회전시킴 */
 }
 
 .button-container {
@@ -562,9 +546,10 @@ a {
 
     .pro {
         font-size: 10vw;
-        left: 52%;
-        top: 58%;
+        left: 6%;
+        top: -6%;
         transform: translate(-50%, -50%);
+        position: relative;
     }
 
     .content h2 {

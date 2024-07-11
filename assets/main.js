@@ -1,70 +1,5 @@
-// const stars = document.getElementById('stars');
-// const starsCtx = stars.getContext('2d');
 
-// let screen, starsElements, starsParams = { speed: 35, number: 900, extinction: 4 };
-// let animationHandle; // 추가: requestAnimationFrame 핸들을 저장할 변수
-
-// setupStars();
-// updateStars();
-
-// window.onresize = function () {
-//     setupStars();
-//     cancelAnimationFrame(animationHandle); // resize 시 animation frame을 취소하고 다시 요청
-//     updateStars();
-// };
-
-// function Star() {
-//     this.x = Math.random() * stars.width;
-//     this.y = Math.random() * stars.height;
-//     this.z = Math.random() * stars.width;
-
-//     this.move = function () {
-//         this.z -= starsParams.speed;
-//         if (this.z <= 0) {
-//             this.z = stars.width;
-//         }
-//     };
-
-//     this.show = function () {
-//         let x, y, rad, opacity;
-//         x = (this.x - screen.c[0]) * (stars.width / this.z);
-//         x = x + screen.c[0];
-//         y = (this.y - screen.c[1]) * (stars.width / this.z);
-//         y = y + screen.c[1];
-//         rad = stars.width / this.z;
-//         opacity = (rad > starsParams.extinction) ? 1.5 * (2 - rad / starsParams.extinction) : 1;
-
-//         starsCtx.beginPath();
-//         starsCtx.fillStyle = "rgba(255, 255, 255, " + opacity + ")";
-//         starsCtx.arc(x, y, rad, 0, Math.PI * 2);
-//         starsCtx.fill();
-//     }
-// }
-
-// function setupStars() {
-//     screen = {
-//         w: window.innerWidth,
-//         h: window.innerHeight,
-//         c: [window.innerWidth * 0.5, window.innerHeight * 0.5]
-//     };
-//     stars.width = screen.w;
-//     stars.height = screen.h;
-//     starsElements = [];
-//     for (let i = 0; i < starsParams.number; i++) {
-//         starsElements[i] = new Star();
-//     }
-// }
-
-// function updateStars() {
-//     starsCtx.fillStyle = "black";
-//     starsCtx.fillRect(0, 0, stars.width, stars.height);
-//     starsElements.forEach(function (s) {
-//         s.show();
-//         s.move();
-//     });
-//     animationHandle = requestAnimationFrame(updateStars); // requestAnimationFrame 핸들을 변수에 저장
-// }
-
+// 스킬 하나씩 나오기 
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -86,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
 
-
     // 커서 이펙트
     const cursor = document.createElement('div');
     cursor.classList.add('percent');
@@ -97,18 +31,38 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor.style.top = `${e.clientY}px`;
     });
 
-    const skills = document.querySelectorAll('.skill');
+    const skills = document.querySelectorAll('.desc, .title3');
     skills.forEach(skill => {
-        skill.addEventListener('mouseenter', () => {
-            cursor.innerText = skill.getAttribute('data-percent');
-            cursor.style.transform = 'scale(1.2)';
+        skill.addEventListener('mouseover', e => {
+            if (e.target === skill || e.target.parentNode === skill) {
+                const percent = skill.getAttribute('data-percent') || skill.parentNode.getAttribute('data-percent');
+                cursor.innerText = percent;
+                cursor.style.transform = 'scale(1.2)';
+            }
         });
 
-        skill.addEventListener('mouseleave', () => {
-            cursor.innerText = '';
-            cursor.style.transform = 'scale(1)';
+        skill.addEventListener('mouseout', e => {
+            if (e.target === skill || e.target.parentNode === skill) {
+                cursor.innerText = '';
+                cursor.style.transform = 'scale(1)';
+            }
         });
     });
+
+    const section3 = document.getElementById('section3');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                cursor.style.opacity = '1'; // Show cursor when section3 is visible
+                document.body.style.cursor = 'none'; // Hide default cursor
+            } else {
+                cursor.style.opacity = '0'; // Hide cursor when section3 is not visible
+                document.body.style.cursor = 'auto'; // Show default cursor
+            }
+        });
+    });
+
+    observer.observe(section3);
 });
 
 
