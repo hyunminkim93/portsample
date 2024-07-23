@@ -86,82 +86,7 @@
         <!-- //section3 -->
 
         <section id="section4">
-            <div class="cube-container">
-                <div class="cube1">
-                    <div class="face front">
-                        <span>CHICKEN</span>
-                        <div class="front_img"></div>
-                    </div>
-                    <div class="face back">
-                        <span>MOVIEINFO</span>
-                        <div class="front_img1"></div>
-                    </div>
-                    <div class="face bottom">
-                        <span>PICKSTOM</span>
-                        <div class="front_img2"></div>
-                    </div>
-                    <div class="face top">
-                        <span>MUSIC</span>
-                        <div class="front_img3"></div>
-                    </div>
-                    <div class="face left"></div>
-                    <div class="face right"></div>
-                </div>
-                <div class="cube2">
-                    <div class="face1 front">
-                        <h2>REACT</h2>
-                        <h4>
-                            React를 이용하여 치킨 브랜드를 검색하고 치킨 정보에 대해 쉽게 접근할 수 있는 사이트를 개발했습니다. 이 사이트는 사용자들이 다양한
-                            치킨 브랜드를 검색하고, 각 브랜드의 메뉴, 가격, 부가설명 등의 정보를 한눈에 확인할 수 있도록 설계되었습니다. 직관적인 인터페이스와 빠른 검색 기능을 통해 사용자
-                            경험을
-                            극대화하였습니다.
-                        </h4>
-                        <div class="button-container">
-                            <a href="https://chicken-site.vercel.app/" class="button" target="_blank">SITE VIEW →</a>
-                            <a href="https://github.com/hyunminkim93/chickenSite" class="button" target="_blank">CODE
-                                VIEW →</a>
-                        </div>
-                    </div>
-                    <div class="face1 top">
-                        <h2>PHP</h2>
-                        <h4>
-                            PHP를 이용해 사용자가 강아지 옷을 커스텀 디자인할 수 있는 웹사이트를 개발합니다. 로그인, 회원가입, 마이페이지, 게시판 기능을 포함하여 사용자 맞춤형 경험을
-                            제공합니다.
-                        </h4>
-                        <div class="button-container">
-                            <a href="http://rlagusals235.dothome.co.kr" class="button" target="_blank">SITE VIEW →</a>
-                            <a href="https://github.com/hyunminkim93/FirstProject" class="button" target="_blank">CODE
-                                VIEW →</a>
-                        </div>
-                    </div>
-                    <div class="face1 back">
-                        <span class="vue">VUE</span>
-                        <span class="vuedesc">
-                            Vue를 이용해 TMDB API를 통해 다양한 장르의 영화를 검색하고 예고편과 상세 정보를 제공하는 영화 정보 사이트를 개발합니다. TMDB API로 최신 영화
-                            데이터를 받아와 사용자에게 직관적이고 매력적인 인터페이스를 제공합니다.
-                        </span>
-                        <div class="button-container1">
-                            <a href="https://movie-info-vue.web.app/" class="button1" target="_blank">SITE VIEW →</a>
-                            <a href="https://github.com/hyunminkim93/vue-movie" class="button1" target="_blank">CODE
-                                VIEW →</a>
-                        </div>
-                    </div>
-                    <div class="face1 bottom">
-                        <h2>REACT</h2>
-                        <h4>
-                            React를 이용해 다양한 음악 사이트의 Top100 차트를 JSON 파일로 받아와 보고 들을 수 있는 웹사이트를 개발합니다. API를 활용하여 음악 데이터를
-                            가져오고, 사용자들이 음악을 검색하고 나만의 음악 리스트에 추가해 들을 수 있는 기능을 제공합니다.
-                        </h4>
-                        <div class="button-container">
-                            <a href="https://youtubemusic3.vercel.app/" class="button" target="_blank">SITE VIEW →</a>
-                            <a href="https://github.com/hyunminkim93/youtubemusic3" class="button" target="_blank">CODE
-                                VIEW →</a>
-                        </div>
-                    </div>
-                    <div class="face1 left"></div>
-                    <div class="face1 right"></div>
-                </div>
-            </div>
+
         </section>
         <!-- //section4 -->
 
@@ -234,26 +159,6 @@
                 scrub: 0.5,
                 pinSpacing: true,  // pinSpacing을 true로 설정
             });
-        });
-
-        // section4의 ScrollTrigger 설정 큐브 회전
-        ScrollTrigger.create({
-            trigger: "#section4",
-            start: "top top", // 공백을 줄이기 위해 값을 조정
-            end: "+=3000%", // section4의 끝을 명확히 설정
-            pin: true,
-            pinSpacing: true,  // pinSpacing을 true로 설정
-            scrub: 1,
-            onUpdate: self => {
-                const progress = self.progress;
-                const angle = progress * 1080;
-
-                // 큐브 1은 위아래로 회전
-                document.querySelector('.cube1').style.transform = `rotateX(${angle}deg)`;
-
-                // 큐브 2는 반대로 회전
-                document.querySelector('.cube2').style.transform = `rotateX(${-angle}deg)`;
-            },
         });
 
         // ScrollSmoother 설정
